@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotation PDF</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+            border: 1px solid #000;
+            margin: auto;
+            width: 80%;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .sub-header {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #555;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .details {
+            margin-bottom: 30px;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+        h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .work-details {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .work-details th, .work-details td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .work-details th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        .terms {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .services {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .services ul {
+            list-style: none;
+            padding: 0;
+        }
+        .services ul li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Ramchandra Carpentry Work</h1>
+            <p class="sub-header">Your trusted partner for quality carpentry services</p>
+        </div>
+        
+        <div class="contact-info">
+            <p><strong>Address:</strong> 123 Carpenter Street, Woodtown, Country</p>
+            <p><strong>Phone:</strong> +91-9876543210</p>
+            <p><strong>Email:</strong> ramchandra@carpentrywork.com</p>
+        </div>
+
+        <div class="details">
+            <h2>Client Details</h2>
+            <p><strong>Name:</strong> {{ client_name }}</p>
+            <p><strong>Phone:</strong> {{ phone }}</p>
+            <p><strong>Address:</strong> {{ address }}</p>
+        </div>
+
+        <h2>Work Details</h2>
+        <table class="work-details">
+            <tr>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Price</th>
+            </tr>
+            {% for work in works %}
+            <tr>
+                <td>{{ work.description }}</td>
+                <td>{{ work.quantity }}</td>
+                <td>{{ work.unit_price }}</td>
+                <td>{{ work.price }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h3>Total Price: ₹ {{ total_price }}</h3>
+
+        <div class="services">
+            <h3>Our Services Include:</h3>
+            <ul>
+                <li>Custom furniture making</li>
+                <li>Woodwork restoration</li>
+                <li>Kitchen cabinet installation</li>
+                <li>Wooden flooring</li>
+                <li>Door and window fittings</li>
+                <li>Modular furniture solutions</li>
+            </ul>
+        </div>
+
+        <div class="terms">
+            <h3>Terms and Conditions</h3>
+            <p>{{ terms }}</p>
+        </div>
+    </div>
+</body>
+</html>
