@@ -9,32 +9,46 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
         .container {
-            padding: 20px;
-            border: 1px solid #000;
-            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px auto;
             width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .header {
             text-align: center;
             margin-bottom: 30px;
         }
         h1 {
-            font-size: 36px;
+            font-size: 40px;
+            color: #2C3E50;
             margin: 0;
         }
         .sub-header {
-            font-size: 14px;
-            margin-top: 10px;
+            font-size: 16px;
             color: #555;
+            margin: 10px 0 20px;
         }
         .contact-info {
             text-align: center;
-            margin-top: 10px;
+            margin-bottom: 20px;
         }
         .contact-info p {
             margin: 5px 0;
+            color: #2C3E50;
+        }
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #34495E;
+            border-bottom: 2px solid #2C3E50;
+            padding-bottom: 5px;
         }
         .details {
             margin-bottom: 30px;
@@ -42,31 +56,25 @@
         .details p {
             margin: 5px 0;
         }
-        h2 {
-            font-size: 24px;
-            margin-top: 20px;
-        }
-        .work-details {
-            border-collapse: collapse;
+        table {
             width: 100%;
+            border-collapse: collapse;
             margin-bottom: 20px;
         }
-        .work-details th, .work-details td {
+        table th, table td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 10px;
             text-align: center;
         }
-        .work-details th {
-            background-color: #f4f4f4;
+        table th {
+            background-color: #ECF0F1;
             font-weight: bold;
         }
-        .terms {
+        .terms, .services {
             margin-top: 20px;
-            font-size: 14px;
         }
-        .services {
+        .terms p, .services ul {
             font-size: 14px;
-            margin-top: 10px;
         }
         .services ul {
             list-style: none;
@@ -74,6 +82,15 @@
         }
         .services ul li {
             margin: 5px 0;
+        }
+        .right-align {
+            text-align: right;
+        }
+        .date {
+            font-size: 14px;
+            margin-top: 30px;
+            text-align: right;
+            color: #7F8C8D;
         }
     </style>
 </head>
@@ -83,22 +100,34 @@
             <h1>Ramchandra Carpentry Work</h1>
             <p class="sub-header">Your trusted partner for quality carpentry services</p>
         </div>
-        
+
         <div class="contact-info">
             <p><strong>Address:</strong> 123 Carpenter Street, Woodtown, Country</p>
             <p><strong>Phone:</strong> +91-9876543210</p>
             <p><strong>Email:</strong> ramchandra@carpentrywork.com</p>
         </div>
 
+        <div class="services">
+            <h2 class="section-title">We Specialize In</h2>
+            <ul>
+                <li>Custom furniture making</li>
+                <li>Woodwork restoration</li>
+                <li>Kitchen cabinet installation</li>
+                <li>Wooden flooring</li>
+                <li>Door and window fittings</li>
+                <li>Modular furniture solutions</li>
+            </ul>
+        </div>
+
         <div class="details">
-            <h2>Client Details</h2>
+            <h2 class="section-title">Client Details</h2>
             <p><strong>Name:</strong> {{ client_name }}</p>
             <p><strong>Phone:</strong> {{ phone }}</p>
             <p><strong>Address:</strong> {{ address }}</p>
         </div>
 
-        <h2>Work Details</h2>
-        <table class="work-details">
+        <h2 class="section-title">Work Details</h2>
+        <table>
             <tr>
                 <th>Description</th>
                 <th>Quantity</th>
@@ -117,21 +146,13 @@
 
         <h3>Total Price: ₹ {{ total_price }}</h3>
 
-        <div class="services">
-            <h3>Our Services Include:</h3>
-            <ul>
-                <li>Custom furniture making</li>
-                <li>Woodwork restoration</li>
-                <li>Kitchen cabinet installation</li>
-                <li>Wooden flooring</li>
-                <li>Door and window fittings</li>
-                <li>Modular furniture solutions</li>
-            </ul>
+        <div class="terms">
+            <h2 class="section-title">Terms and Conditions</h2>
+            <p>Here my terms and contion </p>
         </div>
 
-        <div class="terms">
-            <h3>Terms and Conditions</h3>
-            <p>{{ terms }}</p>
+        <div class="date">
+            <p>Date: {{ current_date }}</p>
         </div>
     </div>
 </body>

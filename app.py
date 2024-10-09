@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, send_file
 from io import BytesIO
 import pdfkit
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -33,11 +34,12 @@ def generate_quote():
         works.append(work)
         total_price += work['price']
 
+    current_date = datetime.now()
+    current_date = current_date.strftime("%d/%m/%Y")
+
     # Pass data to the template
     rendered = render_template('quote_template.html', client_name=client_name, phone=phone, address=address, 
-                               works=works, total_price=total_price, carpenter_name="John Doe", 
-                               carpenter_phone="123-456-7890", carpenter_address="Carpenter's Address", 
-                               terms="Payment due upon completion.")
+                               works=works, total_price=total_price, current_date=current_date)
 
     # Generate PDF from rendered HTML
     path_to_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'  # Update this path accordingly
@@ -49,4 +51,4 @@ def generate_quote():
     return send_file(response, as_attachment=True, download_name="quotation.pdf", mimetype='application/pdf')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
