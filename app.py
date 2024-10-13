@@ -42,7 +42,7 @@ def generate_quote():
                                works=works, total_price=total_price, current_date=current_date)
 
     # Generate PDF from rendered HTML
-    path_to_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'  # Update this path accordingly
+    path_to_wkhtmltopdf = '/usr/local/bin/wkhtmltopdf'  # Update this path accordingly
     config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
     pdf = pdfkit.from_string(rendered, False, configuration=config)
 
