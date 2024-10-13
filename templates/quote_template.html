@@ -7,90 +7,95 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
             color: #333;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
         .container {
+            padding: 20px;
+            margin: auto;
+            width: 85%;
             background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            margin: 20px auto;
-            width: 80%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
         h1 {
-            font-size: 40px;
+            font-size: 28px;
             color: #2C3E50;
             margin: 0;
         }
         .sub-header {
-            font-size: 16px;
+            font-size: 15px;
             color: #555;
-            margin: 10px 0 20px;
+            margin-top: 5px;
         }
         .contact-info {
-            text-align: center;
-            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 15px;
+            margin-bottom: 15px;
         }
         .contact-info p {
-            margin: 5px 0;
+            margin: 0;
             color: #2C3E50;
         }
+        .contact-info a {
+            text-decoration: none;
+            color: #2980b9;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
         .section-title {
-            font-size: 22px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 8px;
             color: #34495E;
-            border-bottom: 2px solid #2C3E50;
-            padding-bottom: 5px;
+            border-bottom: 1px solid #2C3E50;
+            padding-bottom: 4px;
         }
-        .details {
-            margin-bottom: 30px;
+        .services-list {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            margin-bottom: 10px;
         }
-        .details p {
-            margin: 5px 0;
+        .services-list ul {
+            list-style: none;
+            padding: 0;
+            width: 48%;
+        }
+        .services-list ul li {
+            margin: 3px 0;
+        }
+        .details, .terms {
+            font-size: 15px;
+            margin-bottom: 5px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            font-size: 15px;
         }
         table th, table td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 6px;
             text-align: center;
         }
         table th {
             background-color: #ECF0F1;
             font-weight: bold;
         }
-        .terms, .services {
-            margin-top: 20px;
-        }
-        .terms p, .services ul {
-            font-size: 14px;
-        }
-        .services ul {
-            list-style: none;
-            padding: 0;
-        }
-        .services ul li {
-            margin: 5px 0;
-        }
-        .right-align {
-            text-align: right;
+        .terms {
+            margin-top: 8px;
         }
         .date {
-            font-size: 14px;
-            margin-top: 30px;
+            font-size: 15px;
             text-align: right;
             color: #7F8C8D;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -102,21 +107,24 @@
         </div>
 
         <div class="contact-info">
-            <p><strong>Address:</strong> 123 Carpenter Street, Woodtown, Country</p>
-            <p><strong>Phone:</strong> +91-9876543210</p>
-            <p><strong>Email:</strong> ramchandra@carpentrywork.com</p>
+            <p>Address: Om shiv sai w.s., Gavrai pada, Vasai, Palghar-401208</p>
+            <p>Phone: +91-9867848691</p>
+            <p>Email: <a href="mailto:ramchandra@gmail.com">ramchandra@gmail.com</a></p>
+            <p>Website: <a href="http://carpentrywork.onrender.com">carpentrywork.onrender.com</a></p>
         </div>
 
         <div class="services">
             <h2 class="section-title">We Specialize In</h2>
-            <ul>
-                <li>Custom furniture making</li>
-                <li>Woodwork restoration</li>
-                <li>Kitchen cabinet installation</li>
-                <li>Wooden flooring</li>
-                <li>Door and window fittings</li>
-                <li>Modular furniture solutions</li>
-            </ul>
+            <div class="services-list">
+                <ul>
+                    <li>Custom furniture making</li>
+                    <li>Woodwork restoration</li>
+                    <li>Kitchen cabinet installation</li>
+                    <li>Wooden flooring</li>
+                    <li>Door and window fittings</li>
+                    <li>Modular furniture solutions</li>
+                </ul>
+            </div>
         </div>
 
         <div class="details">
@@ -148,7 +156,7 @@
 
         <div class="terms">
             <h2 class="section-title">Terms and Conditions</h2>
-            <p>Here my terms and contion </p>
+            <p>Payment 60% advance, rest in two parts as per work progress. Completion within 8-10 days.</p>
         </div>
 
         <div class="date">
