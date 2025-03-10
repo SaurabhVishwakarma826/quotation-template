@@ -5,9 +5,11 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
     return render_template('form.html')
+
 
 @app.route('/generate_quote', methods=['POST'])
 def generate_quote():
@@ -23,7 +25,7 @@ def generate_quote():
 
     total_price = 0
     works = []
-    
+
     for i in range(len(work_descriptions)):
         work = {
             'description': work_descriptions[i],
@@ -38,17 +40,18 @@ def generate_quote():
     current_date = current_date.strftime("%d/%m/%Y")
 
     # Pass data to the template
-    rendered = render_template('quote_template.html', client_name=client_name, phone=phone, address=address, 
+    rendered = render_template('quote_template.html', client_name=client_name, phone=phone, address=address,
                                works=works, total_price=total_price, current_date=current_date)
 
     # Generate PDF from rendered HTML
-    path_to_wkhtmltopdf = '/usr/local/bin/wkhtmltopdf'  # Update this path accordingly
-    config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
-    pdf = pdfkit.from_string(rendered, False, configuration=config)
+    # path_to_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'  # Update this path accordingly
+    # config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
+    pdf = pdfkit.from_string(rendered, False)
 
     # Download the PDF
     response = BytesIO(pdf)
     return send_file(response, as_attachment=True, download_name="quotation.pdf", mimetype='application/pdf')
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
